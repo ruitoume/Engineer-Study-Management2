@@ -12,9 +12,6 @@ use App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/users', [UsersController::class, 'index']);
+Route::get('/', [UsersController::class, 'index']);
+Route::get('/follow/{users}', [UsersController::class ,'follow']);
+Route::get('/follower/{users}', [UsersController::class ,'follower']);
